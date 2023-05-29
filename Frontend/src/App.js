@@ -37,6 +37,7 @@ class App extends React.Component {
 
             <div className="col-4 col-lg-6  col-md-8 col-sm-10 col-xs-12">
               {this.state.auth ? <Email ask_auth={this.check_auth}/> : <Welcome ask_auth={this.check_auth}/> }
+              {/* <Email /> */}
             </div>
 
             <div className="col-4 col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>

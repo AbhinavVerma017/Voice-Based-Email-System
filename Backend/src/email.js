@@ -48,6 +48,7 @@ exports.send_email = function(req, response) {
             //Exctract credentials from the session
             user: req.session.address,
             pass: req.session.password,
+            // pass: 'iisubihgcgeerhov',
             to:   to,
             subject: subject
         }, content, (err, res) => {

@@ -6,7 +6,7 @@ exports.pool = new Pool({
     user: 'postgres',
     host: 'localhost',
     database: 'mail_system',
-    password: '58132134',
+    password: /* Your DB Password here */,
     port: 5432,
 })
   

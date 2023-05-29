@@ -78,6 +78,13 @@ class Email extends React.Component {
 
     //This function is for receiving inbox emails from backend
     get_emails() {
+        // this.setState({
+        //     InboxMails: [{
+        //         target: "adarsh@gmail.com",
+        //         subject: "Testing Project",
+        //         content: "This is just a test email to check the working of the project!!"
+        //     }]
+        // })
         Axios.post("/email/fetch_emails", {"search": "INBOX"}).then((req) => {
             if (req.data.code === SUCCESS){
                 this.setState({
