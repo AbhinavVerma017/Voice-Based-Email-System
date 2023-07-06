@@ -13,18 +13,4 @@ The aim of this project comes from this. In this project, it is planned to creat
 The application must have some capabilities to perform these actions. For example, for sending or receiving mail, speech to text conversion, text to speech conversion and audio
 playback; and for selecting options from the menu, some trigger mechanism or keyword recognition process will be necessary.
 
-## Screenshots from the application:
-### Login Page
-![login](Screenshots/login.PNG)
 
-### Home Page
-![login](Screenshots/emails.PNG)
-
-### Inbox Page
-![login](Screenshots/inbox.PNG)
-
-### Sent Page
-![login](Screenshots/sent.PNG)
-
-### Send Email Page
-![login](Screenshots/sendemail.PNG)
