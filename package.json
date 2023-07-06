@@ -1,0 +1,18 @@
+{
+  "name": "voice-based-email-system",
+  "version": "1.0.0",
+  "description": "Voice based email system for visually impaired people",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "based": "^0.0.0",
+    "cors": "^2.8.5",
+    "email": "^0.2.6",
+    "system": "^2.0.1",
+    "voice": "^0.0.0"
+  }
+}

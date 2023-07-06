@@ -168,7 +168,7 @@ class Welcome extends React.Component {
             //Since @ is understands like "at", it converts to correct gmail form
             //allText[1] = allText[1].slice(0, allText[1].indexOf("atgmail.com")) + "@gmail.com"
 
-            allText[1] = "testmailappleandbanana@gmail.com"  //Email is given direct to test our code
+            allText[1] = "adarshkumarmishra82@gmail.com"  //Email is given direct to test our code
 
             //When user says login, related states will be assigned and login function is called
             if (allText[0].toLowerCase().replace(/\s/g, "") === "login") {

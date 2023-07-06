@@ -16,7 +16,7 @@
     "build": "react-scripts build"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "./node_modules/eslint-config-react-app/base.js"
   },
   "browserslist": {
     "production": [

@@ -2,7 +2,7 @@
 import React from 'react';
 import './email.css';
 import Axios from 'axios';
-import { SUCCESS } from './error_codes.js';
+import { SUCCESS } from './error_codes';
 import Speech2Text from "./s2t.js";
 import Spell2Text from "./spell2text.js"
 
@@ -59,51 +59,56 @@ class Email extends React.Component {
 
     //This function converts the text to speech
     text2speech = (text) => {
-        synth.cancel()
-        var utterThis = new SpeechSynthesisUtterance(text);
-        synth.speak(utterThis);
-    }
-
-    //when the page is loaded, mails are received
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            var utterThis = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(utterThis);
+        }
+    };
+    
     componentDidMount() {
         this.get_emails();
         this.get_emails_sent();
-        document.addEventListener('keypress', this.handleClick)
+        document.addEventListener('keypress', this.handleClick);
     }
-
+    
     componentWillUnmount() {
-        synth.cancel()
-        document.removeEventListener('keypress', this.handleClick)
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
+        document.removeEventListener('keypress', this.handleClick);
     }
-
-    //This function is for receiving inbox emails from backend
+    
     get_emails() {
-        // this.setState({
-        //     InboxMails: [{
-        //         target: "adarsh@gmail.com",
-        //         subject: "Testing Project",
-        //         content: "This is just a test email to check the working of the project!!"
-        //     }]
-        // })
-        Axios.post("/email/fetch_emails", {"search": "INBOX"}).then((req) => {
-            if (req.data.code === SUCCESS){
-                this.setState({
-                    InboxMails: req.data.data
-                })
-            }
-        })
+        Axios.post("/email/fetch_emails", {"search": "INBOX"})
+            .then((req) => {
+                if (req.data.code === SUCCESS) {
+                    this.setState({
+                        InboxMails: req.data.data
+                    });
+                }
+            })
+            .catch((error) => {
+                // Handle the error appropriately
+                console.error("Error fetching inbox emails:", error);
+            });
     }
-
-    //This function is for receiving sent emails from backend
+    
     get_emails_sent() {
-        Axios.post("/email/fetch_emails", {"search": "SENT"}).then((req) => {
-            if (req.data.code === SUCCESS){
-                this.setState({
-                    SentMails: req.data.data
-                })
-            }
-        })
+        Axios.post("/email/fetch_emails", {"search": "SENT"})
+            .then((req) => {
+                if (req.data.code === SUCCESS) {
+                    this.setState({
+                        SentMails: req.data.data
+                    });
+                }
+            })
+            .catch((error) => {
+                // Handle the error appropriately
+                console.error("Error fetching sent emails:", error);
+            });
     }
+    
 
     //This function shows the inbox mails on the mails list section
     inboxFunction() {

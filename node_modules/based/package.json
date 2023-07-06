@@ -1,0 +1,25 @@
+{
+  "name": "based",
+  "version": "0.0.0",
+  "description": "A simple utility for converting numbers to different bases.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ed-flanagan/based.git"
+  },
+  "keywords": [
+    "numeric",
+    "number",
+    "base",
+    "convert"
+  ],
+  "author": "Ed Flanagan <ed@flanagan.xyz> (flanagan.xyz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ed-flanagan/based/issues"
+  },
+  "homepage": "https://github.com/ed-flanagan/based#readme"
+}

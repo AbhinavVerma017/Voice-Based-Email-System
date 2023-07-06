@@ -5,8 +5,8 @@ const {Pool} = require('pg')
 exports.pool = new Pool({
     user: 'postgres',
     host: 'localhost',
-    database: 'mail_system',
-    password: /* Your DB Password here */,
+    database: 'mail',
+    password: '1901330100008',
     port: 5432,
 })
   
